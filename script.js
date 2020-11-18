@@ -47,13 +47,13 @@ function board() {
                 else if (j == 2 || j == 5) td.innerHTML = '♗';
                 else if (j == 3) td.innerHTML = '♕';
                 else td.innerHTML = '♔';
-            }
+            };
 
             tr.appendChild(td);
             flag = !flag;
-        }
+        };
         table.appendChild(tr);
-    }
+    };
     let arr = [' ', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
     for (let k = 0; k < 9; k++) {
 
@@ -64,13 +64,13 @@ function board() {
         td.innerHTML = arr[k];
         trr.appendChild(td);
 
-    }
+    };
     table.appendChild(trr);
     document.body.appendChild(table);
 
 
-}
-board()
+};
+board();
 
 /* 3. Сделать генерацию корзины динамической: верстка корзины не должна находиться в HTML-структуре. 
 Там должен быть только div, в который будет вставляться корзина, сгенерированная на базе JS:
@@ -94,22 +94,22 @@ function basket(basket = []) {
         let count_product = 0;
         for (let p = 0; p < basket.length; p++) {
             count_product += basket[p][2];
-        }
+        };
         for (let j = 0; j < cotalog.length; j++) {
             for (let k = 0; k < basket.length; k++) {
                 if (cotalog[j][0] == basket[k][0]) {
                     for (let r = 0; r < cotalog[j].length; r++) {
                         if (cotalog[j][r][0] == basket[k][1]) {
                             total += cotalog[j][r][1] * basket[k][2];
-                        }
-                    }
-                }
-            }
-        }
+                        };
+                    };
+                };
+            };
+        };
         div_basket.innerHTML = `В корзине ${count_product} товаров на сумму ${total} рублей.`;
-    }
+    };
     document.body.append(div_basket);
-}
+};
 basket([['computer', 'Lenovo', 2], ['keyboard', 'Razer', 3]]);
 
 /* 4*. Сделать так, чтобы товары в каталоге выводились при помощи JS:
@@ -131,7 +131,7 @@ function output_catalog() {
             div_basket.innerHTML = `В разделе ${catalog[i][0]} находится ${catalog[i][k][0]} 
                                         стоимостью ${catalog[i][k][1]}`;
             document.body.append(div_basket);
-        }
-    }
-}
+        };
+    };
+};
 output_catalog();
